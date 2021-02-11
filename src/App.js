@@ -16,6 +16,7 @@ function App() {
       <Person name="Arpit" experience="4">I love coding!</Person>
       <Person name="Nitin" experience="2"/>
     </div>
+    //pass anything Person which can be accessible using props in different components
   );
   // return React.createElement('div',{className:'App'},React.createElement('h1',null,'Hello my anme is saiful hasan'))
 }
