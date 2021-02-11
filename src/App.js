@@ -12,7 +12,9 @@ function App() {
     <div className="App">
       <h1>Hello world!! My name is Saif</h1>
       <p>This is  really working!</p>
-      <Person />
+      <Person name="saif" experience="1" />
+      <Person name="Arpit" experience="4">I love coding!</Person>
+      <Person name="Nitin" experience="2"/>
     </div>
   );
   // return React.createElement('div',{className:'App'},React.createElement('h1',null,'Hello my anme is saiful hasan'))
