@@ -34,13 +34,21 @@ class App extends Component {
       })
     }
     render(){
+      const style={
+        backgroundColor:"white",
+        font:"inherit",
+        border:"1px solid blue",
+        padding:"8px",
+        cursor:"pointer"
+      }
+      
     return (
-      //Class should be written as className i.e camel case 
+    // Class should be written as className i.e camel case 
       //There should be only one root element
       <div className="App">
         <h1>Hello world!! My name is Saif</h1>
         <p>This is  really working!</p>
-        <button onClick={()=>this.switchNameHandler("Saiful hasan")}>Switch Name</button>
+        <button  style={style} onClick={()=>this.switchNameHandler("Saiful hasan")}>Switch Name</button>
         <Person
           name={this.state.person[1].name}
           experience={this.state.person[1].experience} >I love coding!</Person>
