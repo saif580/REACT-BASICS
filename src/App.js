@@ -19,7 +19,8 @@ class App extends Component {
         {name:'saif'},
         {name:'saiful'},
         {name:'saiful hasan'}
-      ]
+      ],
+      showPerson:false
     };
     switchNameHandler=(newName)=>{
         this.setState({
@@ -49,7 +50,10 @@ class App extends Component {
         ]
       })
     }
-
+    togglePersonHanddler=()=>{
+      const show=this.state.showPerson;
+      this.setState({showPerson:!show})
+    }
     render(){
       const style={
         backgroundColor:"white",
@@ -70,20 +74,24 @@ class App extends Component {
         <h1>Hello world!! My name is Saif</h1>
         <p>This is  really working!</p>
         
-        <button  style={style} onClick={()=>this.switchNameHandler("Saiful hasan")}>Switch Name</button>
-        <Person
-          name={this.state.person[1].name}
-          experience={this.state.person[1].experience} >I love coding!</Person>
-        <Person 
-          name={this.state.person[0].name} 
-          experience={this.state.person[0].experience} 
+        <button  style={style} onClick={this.togglePersonHanddler}>Switch Name</button>
+        { 
+          this.state.showPerson===true ? 
+          <div>
+          <Person
+            name={this.state.person[1].name}
+            experience={this.state.person[1].experience} >I love coding!</Person>
+          <Person 
+            name={this.state.person[0].name} 
+            experience={this.state.person[0].experience} 
             click={this.switchNameHandler.bind(this,"saif")}
             changed={this.nameChangeHandler} 
-          />
-        <Person 
-          name={this.state.person[2].name} 
-          experience={this.state.person[2].experience} />
-          
+            />
+          <Person 
+            name={this.state.person[2].name} 
+            experience={this.state.person[2].experience} />
+          </div>:null
+        }
       </div>
       //pass anything Person which can be accessible using props in different components
     );
