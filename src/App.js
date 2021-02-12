@@ -61,6 +61,27 @@ class App extends Component {
         border:"1px solid blue",
         padding:"8px",
         cursor:"pointer"
+      };
+
+      let persons=null;
+
+      if(this.state.showPerson){
+        persons=(
+          <div>
+          <Person
+            name={this.state.person[1].name}
+            experience={this.state.person[1].experience} >I love coding!</Person>
+          <Person 
+            name={this.state.person[0].name} 
+            experience={this.state.person[0].experience} 
+            click={this.switchNameHandler.bind(this,"saif")}
+            changed={this.nameChangeHandler} 
+            />
+          <Person 
+            name={this.state.person[2].name} 
+            experience={this.state.person[2].experience} />
+          </div>
+        )
       }
       
     return (
@@ -75,23 +96,8 @@ class App extends Component {
         <p>This is  really working!</p>
         
         <button  style={style} onClick={this.togglePersonHanddler}>Switch Name</button>
-        { 
-          this.state.showPerson===true ? 
-          <div>
-          <Person
-            name={this.state.person[1].name}
-            experience={this.state.person[1].experience} >I love coding!</Person>
-          <Person 
-            name={this.state.person[0].name} 
-            experience={this.state.person[0].experience} 
-            click={this.switchNameHandler.bind(this,"saif")}
-            changed={this.nameChangeHandler} 
-            />
-          <Person 
-            name={this.state.person[2].name} 
-            experience={this.state.person[2].experience} />
-          </div>:null
-        }
+        {persons}
+          
       </div>
       //pass anything Person which can be accessible using props in different components
     );
