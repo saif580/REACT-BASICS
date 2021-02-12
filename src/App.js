@@ -23,6 +23,16 @@ class App extends Component {
           ]
         })
       }
+    
+    nameChangeHandler=(event)=>{
+      this.setState({
+        person: [
+          { name: event.target.value, experience: 1 },
+          { name: 'Arpit pandey', experience: 3 },
+          { name: 'Nitin khare', experience: 2 }
+        ]
+      })
+    }
     render(){
     return (
       //Class should be written as className i.e camel case 
@@ -33,11 +43,12 @@ class App extends Component {
         <button onClick={()=>this.switchNameHandler("Saiful hasan")}>Switch Name</button>
         <Person
           name={this.state.person[1].name}
-          experience={this.state.person[1].experience}>I love coding!</Person>
+          experience={this.state.person[1].experience} >I love coding!</Person>
         <Person 
           name={this.state.person[0].name} 
           experience={this.state.person[0].experience} 
             click={this.switchNameHandler.bind(this,"saif")}
+            changed={this.nameChangeHandler} 
           />
         <Person 
           name={this.state.person[2].name} 
