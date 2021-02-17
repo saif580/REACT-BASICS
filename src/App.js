@@ -67,7 +67,8 @@ class App extends Component {
     }
     render(){
       const style={
-        backgroundColor:"white",
+        backgroundColor:"green",
+        color:"white",
         font:"inherit",
         border:"1px solid blue",
         padding:"8px",
@@ -101,8 +102,16 @@ class App extends Component {
             experience={this.state.person[2].experience} /> */}
           </div>
         )
+        style.backgroundColor='red';
       }
-      
+      const classes=[];
+      if(this.state.person.length <=2){
+        classes.push('red');
+      }
+      if(this.state.person.length <=1){
+        classes.push('bold');
+      }
+
     return (
     // Class should be written as className i.e camel case 
       //There should be only one root element
@@ -112,7 +121,7 @@ class App extends Component {
         <UserOutput username={this.state.username[1].name} />
         <UserOutput username="saiful hasan"  />
         <h1>Hello world!! My name is Saif</h1>
-        <p>This is  really working!</p>
+        <p className={classes.join(' ')}>This is  really working!</p>
         
         <button  style={style} onClick={this.togglePersonHanddler}>Switch Name</button>
         {persons}
