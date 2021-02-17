@@ -109,7 +109,7 @@ class App extends Component {
         )
         style.backgroundColor='red';
         style[':hover']={
-          backgroundColor:'lightred',
+          backgroundColor:'salmon',
           color:'black'
         }
       }
