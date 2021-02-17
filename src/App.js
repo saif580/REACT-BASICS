@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import React, { Component,useState } from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
-import Radium from 'radium';
+import Radium, { StyleRoot } from 'radium';
 //Import Person from Person folder
 import Person from './Person/Person'
 import UserInput from './UserInput/UserInput.js';
@@ -124,6 +124,7 @@ class App extends Component {
     return (
     // Class should be written as className i.e camel case 
       //There should be only one root element
+      <StyleRoot>
       <div className="App">
         <UserInput change={this.usernameChangeHandler}/>
         <UserOutput username={this.state.username[0].name} />
@@ -136,6 +137,7 @@ class App extends Component {
         {persons}
           
       </div>
+      </StyleRoot>
       //pass anything Person which can be accessible using props in different components
     );
     }
