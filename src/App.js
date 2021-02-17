@@ -1,12 +1,27 @@
 import logo from './logo.svg';
 import React, { Component,useState } from 'react';
 import ReactDOM from 'react-dom';
+import styled from 'styled-components'
 import './App.css';
 // import Radium, { StyleRoot } from 'radium';
 //Import Person from Person folder
 import Person from './Person/Person'
 import UserInput from './UserInput/UserInput.js';
 import UserOutput from './UserOutput/UserOuput';
+
+const StyledButton=styled.button`
+      background-color:green;
+      color:white;
+      font:inherit;
+      border:1px solid blue;
+      padding:8px;
+      cursor:pointer;
+
+      &:hover{
+        background-color:lightgreen;
+        color:black;
+      }
+`;
 
 //Class based components and functional components
 class App extends Component {
@@ -133,7 +148,7 @@ class App extends Component {
         <h1>Hello world!! My name is Saif</h1>
         <p className={classes.join(' ')}>This is  really working!</p>
         
-        <button  style={style} onClick={this.togglePersonHanddler}>Switch Name</button>
+        <StyledButton onClick={this.togglePersonHanddler}>Switch Name</StyledButton>
         {persons}
           
       </div>
