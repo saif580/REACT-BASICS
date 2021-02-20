@@ -22,8 +22,6 @@ const StyledButton=styled.button`
         color:black;
       }
 `;
-
-//Class based components and functional components
 class App extends Component {
     state={
       person: [
